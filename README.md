@@ -86,45 +86,45 @@ We confirm the service is running.
 
 ![VMs](images/10.Starting_Wazuh_Agent.png)
 
-### 11. Confirming Agent Connection
+### 11. Downloading Sysmon
 
-Wazuh shows the new Windows endpoint as connected.
+We use the Invoke-Webrequest command to download Sysmon from the official website and we save it in the download folder.
 
 ![VMs](images/11.Downloading_Sysmon.png)
 
-### 12. Installing Sysmon
+### 12. Extracting Sysmon
 
 We use PowerShell to download Sysmon.
 
 ![VMs](images/12.Extracting_Sysmon.png)
 
-### 13. Extracting Sysmon Package
-
-Unzipping and viewing the Sysmon executables.
-
-![VMs](images/13.Downloading_Sysmon_Conf.png)
-
-### 14. Downloading Sysmon Configuration
+### 13. Downloading Sysmon Configuration file
 
 We fetch the SwiftOnSecurity config.
 
-![VMs](images/14.Starting_Sysmon.png)
+![VMs](images/13.Downloading_Sysmon_Conf.png)
 
-### 15. Installing Sysmon with Configuration
+### 14. Installing Sysmon with Configuration
 
 Sysmon is launched with the custom configuration.
 
-![VMs](images/15.Verifing_Sysmon.png)
+![VMs](images/14.Starting_Sysmon.png)
 
-### 16. Verifying Logs in Event Viewer
+### 15. Verifying Logs in Event Viewer
 
 Sysmon events appear under the Operational channel.
 
+![VMs](images/15.Verifing_Sysmon.png)
+
+### 16. Checking the Wazuh Dashboard
+
+The Manager and the agent are connected and Sysmon events are now ingested into the Wazuh platform. But we can notice the Vulnerability Detection tool is turned off.
+
 ![VMs](images/16.Veryfing_Manager-Agent_Connection.png)
 
-### 17. Checking the Wazuh Dashboard
+### 17. Opening Wazuh Configuration File
 
-Sysmon events are now ingested into the Wazuh platform.
+We proceed opening Wazuh configuration file, inside the Ubuntu Manager VB, to enable The Vulnerability Detection Tool.
 
 ![VMs](images/17.Opening_Wazuh_Conf.png)
 
