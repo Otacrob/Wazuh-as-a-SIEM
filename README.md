@@ -2,6 +2,8 @@
 
 This project documents the complete deployment of Wazuh 4.11.2 on Ubuntu 22.04 and the integration of Sysmon on a Windows 11 virtual machine. The lab demonstrates the centralized monitoring of Windows endpoint behavior using custom rules in Wazuh to detect specific Sysmon events.
 
+---
+
 ## 🎯 Objectives
 
 _ Install and configure Wazuh (Manager, Indexer, Dashboard) on Ubuntu VM
@@ -14,6 +16,8 @@ _ Monitor Sysmon events centrally via Wazuh
 
 _ Create custom detection rules from the Wazuh dashboard
 
+---
+
 ## 🧪 Environment
 
 | Component       | Details                                  |
@@ -23,6 +27,8 @@ _ Create custom detection rules from the Wazuh dashboard
 | Windows VM      | Windows 11 Home (Sysmon + Wazuh agent)   |
 | Hypervisor      | VirtualBox                               |
 | Networking Mode | Bridged Adapter                          |
+
+---
 
 ## 📸 Setup Walkthrough
 
@@ -72,6 +78,8 @@ We navigate to https://<manager-ip>:443 in a browser to verify that the dashboar
 
 ![VMs](images/7.Testing_Dashboard.png)
 
+---
+
 ### 8. Deploying a New Agent
 
 From the dashboard, we add a new agent to register our Windows 11 machine.
@@ -89,6 +97,8 @@ We copy the agent installation command generated in the dashboard and run it in 
 Once installed, we ensure the Wazuh Agent service is running properly.
 
 ![VMs](images/10.Starting_Wazuh_Agent.png)
+
+---
 
 ### 11. Downloading Sysmon
 
@@ -119,6 +129,8 @@ Sysmon is installed with the downloaded configuration file to start logging deta
 We verify that Sysmon is generating events by checking the “Operational” log channel in the Windows Event Viewer.
 
 ![VMs](images/15.Verifing_Sysmon.png)
+
+---
 
 ### 16. Checking the Wazuh Dashboard
 
@@ -196,6 +208,7 @@ The dashboard confirms that the alert was successfully triggered, indicating our
 
 ![VMs](images/26.Alert_Found.png)
 
+---
 
 # Final Outcome
 
@@ -207,4 +220,6 @@ The dashboard confirms that the alert was successfully triggered, indicating our
 
 ✅ Custom detection rule for PowerShell execution tested successfully
 
-👤 Enrico
+---
+
+##### 👤 Project made by: Favaro Enrico
